@@ -1,0 +1,5 @@
+9948552244,valid,9948552244,valid
+,invalid,9948552244,valid
+9948552244,valid,,invalid
+9948,invalid,9948552244,valid
+9948552244,valid,99485522,invalid
