@@ -16,7 +16,7 @@ public class Voiceaut
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter your text");
 		String x=sc.nextLine();
-//		System.setProperty("mbrola.base", "C:\\Selenium\\mbrola");
+		System.setProperty("mbrola.base", "C:\\Selenium\\mbrola");
 		VoiceManager vm=VoiceManager.getInstance();
 		Voice v=vm.getVoice("kevin");
 		v.allocate();

@@ -21,15 +21,15 @@ public class Voiceaut2
 		String x=sc.nextLine();
 		//Launch site 
 		ChromeOptions co=new ChromeOptions();
-		co.addArguments("use-fake-ui-for-media-stream=1");
+		co.addArguments("--use-fake-ui-for-media-stream=1");
 		System.setProperty("webdriver.chrome.driver","C:\\Selenium\\chromedriver.exe");
 		ChromeDriver driver=new ChromeDriver(co);
 		driver.get("https://www.google.co.in");
 		driver.manage().window().maximize();
 		WebDriverWait w=new WebDriverWait(driver,20);
-		w.until(ExpectedConditions.visibilityOfElementLocated(By.id("gsri_ok0")));
+		w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class='voice_search_button']/span")));
 		//Click on mic icon
-		driver.findElement(By.id("gsri_ok0")).click();
+		driver.findElement(By.xpath("//*[@class='voice_search_button']/span")).click();
 		w.until(ExpectedConditions.visibilityOfElementLocated(By.id("spch")));
 		//Send voice using FreeTTS+Mbrola+VBCable driver
 		
@@ -39,6 +39,8 @@ public class Voiceaut2
 		v.allocate();
 		v.speak(x);
 		v.deallocate(); 
+		Thread.sleep(5000);
+		driver.close();
 	}
 }
 
